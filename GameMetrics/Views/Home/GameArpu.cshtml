@@ -1,0 +1,60 @@
+﻿@model IEnumerable<GameMetrics.ViewModels.GameArpu>
+@{
+    ViewBag.Title = "GameArpu";
+}
+
+<h4><span class="label label-default" >gameMetrics</span></h4>
+<h3>Game ARPU!</h3>
+
+<small>
+    This data shows Average Revenue Per Use,  a measurement of profit in terms of customers.
+    <br />To calculate APRU the total revenue of each game category is divided by the number of players making purchases in the category.
+</small>
+ <br />  <br /> 
+    <table>
+        <tr><td>SQL:</td></tr>
+        <tr>
+            <td>
+    <code>
+         SELECT 
+	            SUM(Purchase.Price) / count(DISTINCT Purchase.PlayerID) as ARPU, Game.Title as Game
+            FROM
+	            Purchase 
+            INNER JOIN Game ON Purchase.GameID = Game.GameID 
+            group by Game.Title
+    </code>
+        </td>
+        </tr>
+    </table>
+<br />
+<h4>
+   Click the row for Game details.
+</h4>
+<div class="table-responsive"> 
+    <table class="table  table-striped  table-hover ">
+        <tr>
+            <th>
+                Game
+            </th>
+            <th>
+                ARUP
+            </th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr onclick="location.href = '@(Url.Action( "GameDetail", "Home",new { GameName =  item.GameName }))'">
+            <td>
+                <div style="color:#fcc700;">@item.GameName</div>
+            </td>
+            <td>
+                <div style="color:#abe30c;"> @Html.DisplayFor(modelItem => item.Arpu)</div>
+        </td>
+        </tr>
+    }
+    </table>
+</div>
+
+<a href='@(Url.Action( "Index", "Home",""))'> 
+<div class="badge"><h4> Back </h4></div>
+   
+</a>

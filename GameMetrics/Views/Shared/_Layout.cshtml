@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/css")
+       
+    </head>
+    <body>
+     <nav class="navbar navbar-default" role="navigation">
+       <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" 
+             data-target="#example-navbar-collapse">
+             <span class="sr-only">nav</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+          </button>
+           <div class="navbar-brand">gameMetrics</div>
+       </div>
+       <div class="collapse navbar-collapse" id="example-navbar-collapse">
+          <ul class="nav navbar-nav">
+             <li>@Html.ActionLink("Home", "Index", "Home")</li>
+             <li>@Html.ActionLink("Players", "PlayerGameMoney", "Home")</li>
+              <li>@Html.ActionLink("Games", "GameArpu", "Home")</li>
+          </ul>
+    </div>
+</nav>
+    
+    <div class="container"  style="width:75%;">
+        <div class="panel panel-default">
+        <div class="panel-body">
+         <section>
+             
+                @RenderBody()
+           
+         </section>
+    </div>
+    </div>
+    <div class="row">
+        <div class="hidden-xs col-sm-12" >
+            <small>
+                This site was created with Microsoft Visual Studio Express 2013 for web using MVC. FOR DEMO ONLY!   
+            </small>
+        </div>
+    </div>
+    </div> 
+ 
+        @Scripts.Render("~/js")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

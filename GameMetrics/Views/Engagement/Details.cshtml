@@ -1,0 +1,36 @@
+﻿@model GameMetrics.Models.Engagement
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Engagement</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Player.PlayerName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Player.PlayerName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Game.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Game.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Achievement)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Achievement)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.EngagementID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

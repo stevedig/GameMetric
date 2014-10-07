@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "gameMetrics";
+}
+
+    <h4><span class="label label-default" >gameMetrics</span></h4>
+    <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-7" >
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <p><b>gameMetrics</b> is a DEMO testing tool to track player progress and engagement.</p>
+                        Use it for monitoring:
+                        <ul>
+                            <li>Monitization</li>
+                            <li>Player progression</li>
+                            <li>ARPU</li>
+                            <li>Engagement</li>
+                        </ul>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                       This site and all content were created as a demonstration and in no way reflects any real data.
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    &nbsp
+                        </td>
+                    </tr>
+                 <tr>
+                    <td >
+                       <span style="color:#fcc700;"> Player monitization:</span>
+                    </td>
+                    <td >
+                        <span style="color:#fcc700;">Game ARUP:</span>
+                    </td>
+               </tr>
+                <tr>
+                    <td>
+                         <a href='@(Url.Action( "PlayerGameMoney", "Home",""))'> 
+                        <div class="badge"><h4> Players </h4></div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href='@(Url.Action( "GameArpu", "Home",""))'> 
+                        <div class="badge"> <h4>Games</h4> </div>
+                        </a>
+
+                    </td>
+               </tr>
+               
+            </table>
+            
+            
+           
+                
+        </div>
+
+        <div class="hidden-xs col-sm-6 col-md-5 col-lg-5" >
+            <div style="height:50%;">
+            <a href="http://www.stevedigregorio.com" target="_blank"><img src="/images/pg1side.png" class="img-responsive" ></a> 
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4" >
+        <br /><br />
+                <small>Go here for database 
+                <a href='@(Url.Action( "Index", "Player",""))'> 
+                <span class="badge"> <b>CRUD</b> </span>
+                </a>
+                </small> 
+            </div>
+    </div>    

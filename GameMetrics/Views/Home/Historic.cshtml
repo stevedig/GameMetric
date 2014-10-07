@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GameMetrics.ViewModels.PlayerHistory>
+@{
+    ViewBag.Title = "gameMetrics";
+}
+<h2>Player History</h2>
+<h4>
+<small>
+    This data shows the selected player's monitary transactions for each game.
+</small>
+</h4>
+<div class="table-responsive"> 
+    <table class="table  table-striped  table-hover ">
+        <tr>
+            <th>
+                Player
+            </th>
+            <th>
+                Game
+            </th>
+            <th>
+                Money Spent
+            </th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                <div style="color:#abe30c;"> @item.PlayerName</div>
+            </td>
+            <td>
+                @item.GameName
+            </td>
+            <td>
+                <div style="color:#fcc700;"> $  @item.Price</div>
+            </td>
+        </tr>
+    }
+    </table>
+</div>
+
+
+<a href='@(Url.Action( "PlayerGameMoney", "Home",""))'> 
+<div class="badge"><h4> Back </h4></div>
+</a>

@@ -1,0 +1,116 @@
+﻿#footer {
+    position:absolute;
+     bottom:0px;
+    left:80%;
+    margin-top: 5pt;
+    color: #888;
+}
+body { 
+ color:white;
+     background-color: black;
+ background-repeat: no-repeat;
+ margin: 0;
+ background-image: url(/images/mainbackground.jpg);
+ background-size: 1920px 900px;
+ background-repeat:no-repeat;
+ display: compact;
+}
+@media (min-width: 980px) {
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+.badge:hover { 
+    color: #fcc700;
+  }
+code {
+    color:#fcc700;
+    background-color:black;
+    white-space: normal; 
+}
+
+.editor-field {
+    color:black;
+}
+input[type=submit] {
+    padding:5px 15px; 
+    color:black;
+     border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+/* adjust path for Bootstrap icons */
+[class^="icon-"], [class*=" icon-"] {
+    background-image: url("/Content/images/glyphicons-halflings.png");
+}
+
+.panel-body {
+  padding-left:35px;
+  background-image:url("/images/box-bg.jpg")
+}
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+   background-color: #232323;
+   color:white;
+   border-color:black;
+}
+.table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th {
+   background-color: #2e2e2e;
+   color:white;
+   border-color:black;
+}
+
+.men-grey
+{
+   background-color:#232323;
+}
+.nav > li > a:hover {
+    background-color:#232323;
+}
+.navbar-default {
+	background-color: #363636;
+	border-color: #252525;
+}
+.navbar-default .navbar-brand {
+	color: #ffffff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+	color: #fcc700;
+}
+.navbar-default .navbar-text {
+	color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #fcc700;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	color: #fcc700;
+	background-color: #252525;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	color: #fcc700;
+	background-color: #252525;
+}
+.navbar-default .navbar-toggle {
+	border-color: #252525;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background-color: #252525;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+	border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+	color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+	color: #fcc700;
+}

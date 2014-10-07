@@ -1,0 +1,79 @@
+﻿@model IEnumerable<GameMetrics.ViewModels.PlayerGameMoney>
+@{
+    ViewBag.Title = "gameMetrics";
+}
+<h4><span class="label label-default" >gameMetrics</span></h4>
+<h3>Player Money</h3>
+
+<small>
+    This data shows when a player started playing any game type, and how much money the player has spent on that game type.
+</small>
+ <br />  <br /> 
+    <table>
+        <tr><td>SQL:</td></tr>
+        <tr>
+            <td>
+    <code>
+             SELECT 
+             Player.PlayerName, COUNT(Engagement.Achievement), Player.StartDate, SUM(Purchase.Price), Game.Title 
+             FROM
+             Purchase 
+             INNER JOIN Player ON Purchase.PlayerID = Player.PlayerID 
+             INNER JOIN Game ON Purchase.GameID = Game.GameID 
+             LEFT JOIN Engagement ON  Purchase.PlayerID = Engagement.PlayerID and Purchase.GameID = Engagement.GameID
+             group by Game.Title, Player.PlayerName, Player.StartDate
+    </code>
+        </td>
+        </tr>
+    </table>
+<br />
+
+<h4>
+   Click the row for player details.
+</h4>
+<div class="table-responsive"> 
+    <table class="table table-striped table-hover ">
+        <tr>
+            <th>
+                Start Date
+            </th>
+            <th>
+                Player
+            </th>
+            <th>
+                Game
+            </th>
+            <th>
+                Numb Plays
+            </th>
+            <th>
+                Total $
+            </th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr onclick="location.href = '@(Url.Action( "Historic", "Home",new { PlayerName =  item.PlayerName }))'">
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+               <div style="color:#abe30c;"> @item.PlayerName</div>
+            </td>
+            <td>
+                @item.Game
+            </td>
+            <td>
+                @item.PlayCount
+            </td>
+            <td>
+                <div style="color:#fcc700;">$   @item.TotalSpend</div>
+        </td>
+        </tr>
+    }
+    </table>
+</div>
+
+<a href='@(Url.Action( "Index", "Home",""))'> 
+<div class="badge"><h4> Back </h4></div>
+</a>
+

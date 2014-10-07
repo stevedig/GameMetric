@@ -1,0 +1,45 @@
+﻿@model IEnumerable<GameMetrics.Models.Engagement>
+
+@{
+    ViewBag.Title = "Index";
+}
+ @Html.Partial("_CrudPartial")
+<h2>Engagement</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Player.PlayerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Game.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Achievement)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Player.PlayerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Game.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Achievement)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EngagementID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EngagementID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EngagementID })
+        </td>
+    </tr>
+}
+
+</table>
